@@ -27,7 +27,7 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-	<body background="bg1.jpg">
+	<body background="bglogin.jpg">
 	<div class="login-box">
   	<div class="login-logo">
     <b>Team</b>Name

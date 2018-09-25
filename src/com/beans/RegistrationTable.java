@@ -14,6 +14,16 @@ public class RegistrationTable {
 		Password="abc123567";
 		
 	}
+	
+	public RegistrationTable( String fullName, String emailId, String password) {
+		super();
+		UserID = 0;
+		FullName = fullName;
+		EmailId = emailId;
+		Password = password;
+		
+	}
+	
 	public RegistrationTable(int userId, String fullName, String emailId, String password) {
 		super();
 		UserID = userId;

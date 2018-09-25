@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -9,7 +10,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Starter</title>
+  <title>Welcome</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -22,7 +23,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect. -->
-  <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+  <link rel="stylesheet" href="dist/css/skins/skin-purple.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -55,18 +56,18 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-purple sidebar-mini">
 <div class="wrapper">
 
   <!-- Main Header -->
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="index.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>Incognito</b></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>Incognito</span>
     </a>
 
     <!-- Header Navbar -->
@@ -83,10 +84,10 @@ desired effect
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
-              <span class="label label-success">4</span>
+              <span class="label label-success">2</span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have 4 messages</li>
+              <li class="header">You have 2 messages</li>
               <li>
                 <!-- inner menu: contains the messages -->
                 <ul class="menu">
@@ -94,7 +95,7 @@ desired effect
                     <a href="#">
                       <div class="pull-left">
                         <!-- User Image -->
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="dist/img/userlogo.jpg" class="img-circle" alt="User Image">
                       </div>
                       <!-- Message title and timestamp -->
                       <h4>
@@ -102,7 +103,7 @@ desired effect
                         <small><i class="fa fa-clock-o"></i> 5 mins</small>
                       </h4>
                       <!-- The message -->
-                      <p>Why not buy a new awesome theme?</p>
+                      <p>Want to trade??</p>
                     </a>
                   </li>
                   <!-- end message -->
@@ -119,10 +120,10 @@ desired effect
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
-              <span class="label label-warning">10</span>
+              <span class="label label-warning">1</span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have 10 notifications</li>
+              <li class="header">You have 1 notifications</li>
               <li>
                 <!-- Inner Menu: contains the notifications -->
                 <ul class="menu">
@@ -137,73 +138,33 @@ desired effect
               <li class="footer"><a href="#">View all</a></li>
             </ul>
           </li>
-          <!-- Tasks Menu -->
-          <li class="dropdown tasks-menu">
-            <!-- Menu Toggle Button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-flag-o"></i>
-              <span class="label label-danger">9</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have 9 tasks</li>
-              <li>
-                <!-- Inner menu: contains the tasks -->
-                <ul class="menu">
-                  <li><!-- Task item -->
-                    <a href="#">
-                      <!-- Task title and progress text -->
-                      <h3>
-                        Design some buttons
-                        <small class="pull-right">20%</small>
-                      </h3>
-                      <!-- The progress bar -->
-                      <div class="progress xs">
-                        <!-- Change the css width attribute to simulate progress -->
-                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
-                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">20% Complete</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <!-- end task item -->
-                </ul>
-              </li>
-              <li class="footer">
-                <a href="#">View all tasks</a>
-              </li>
-            </ul>
-          </li>
+         
           <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <img src="dist/img/userlogo.jpg" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Alexander Pierce</span>
+            <span class="hidden-xs"><%String email = (String)request.getAttribute("uname");
+            out.println("Welcome "+email);%></span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="dist/img/userlogo.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  <%String email1 = (String)request.getAttribute("uname");
+            out.println("Welcome \n "+email1);%>
+                  <small>Member since Sept. 2018</small>
                 </p>
               </li>
               <!-- Menu Body -->
               <li class="user-body">
                 <div class="row">
                   <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
+                    <a href="updatepassword.jsp">Update Password</a>
                   </div>
                 </div>
                 <!-- /.row -->
@@ -211,7 +172,7 @@ desired effect
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  <a href="MyTrades.jsp" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
                   <a href="#" class="btn btn-default btn-flat">Sign out</a>
@@ -236,10 +197,11 @@ desired effect
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="dist/img/userlogo.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p><%String email2 = (String)request.getAttribute("uname");
+            out.println("Welcome "+email2);%></p>
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
@@ -259,21 +221,18 @@ desired effect
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">HEADER</li>
+        <li class="header">Trending</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+        <li class="active"><a href="https://economictimes.indiatimes.com/topic/banking-sector/news"><i class="fa fa-link"></i> <span>News Today</span></a></li>
+        <li><a href="https://www.news18.com/news/business/the-top-banking-frauds-of-all-time-356164.html"><i class="fa fa-link"></i> <span>Popular Banking Frauds</span></a></li>
         <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
+          <a href="https://en.wikipedia.org/wiki/Bank_fraud"><i class="fa fa-link"></i> <span>Know More</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="#">Link in level 2</a></li>
-            <li><a href="#">Link in level 2</a></li>
-          </ul>
         </li>
+        <li><a href="#"><i class="fa fa-link"></i> <span>Sign Out</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -285,13 +244,9 @@ desired effect
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Customer Dashboard
+        Welcome
         <small></small>
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
-      </ol>
     </section>
 
     <!-- Main content -->
@@ -304,16 +259,19 @@ desired effect
 
          <!-- Main content -->
     <!-- Main content -->
+    <!-- Main content -->
+    <!-- Main content -->
     <section class="content">
       <!-- Small boxes (Stat box) -->
       <div class="row">
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-aqua">
+          <div class="small-box bg-green">
             <div class="inner">
-              <h3>150</h3>
+              <h2>
 
-              <p>New Orders</p>
+             <b> My </b><p><h2><b>Trades</b></h2></p>
+            </h2>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
@@ -330,14 +288,14 @@ desired effect
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">About New Orders</h4>
+                <h4 class="modal-title">My Trades</h4>
               </div>
               <div class="modal-body">
-                <p>One fine body&hellip;</p>
+                <p>Click Show All to see your past transactions&hellip;</p>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary">Show All</button>
               </div>
             </div>
             <!-- /.modal-content -->
@@ -349,20 +307,24 @@ desired effect
 
 
         <!-- ./col -->
+        <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-green">
+          <div class="small-box bg-orange">
             <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
+              <h2>
+                 <b> Place </b><p><h2><b>Trade</b></h2></p>
+              </h2>
 
-              <p>Bounce Rate</p>
+              
             </div>
             <div class="icon">
-              <i class="ion ion-stats-bars"></i>
+              <i class="ion ion-social-usd"></i>
             </div>
             <a href="#" class="small-box-footer" data-toggle="modal" data-target="#modal-bouncerate">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
+        
 
 
         <div class="modal fade" id="modal-bouncerate">
@@ -371,14 +333,14 @@ desired effect
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">About Bounce Rate</h4>
+                <h4 class="modal-title">Place new Trade</h4>
               </div>
               <div class="modal-body">
-                <p>One fine body&hellip;</p>
+                <p>Click Trade Now to see the current stocks and trades&hellip;</p>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary">Trade Now</button>
               </div>
             </div>
             <!-- /.modal-content -->
@@ -388,17 +350,17 @@ desired effect
 
 
 
-        <!-- ./col -->
+          <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-aqua">
+          <div class="small-box bg-green">
             <div class="inner">
-              <h3>44</h3>
-
-              <p>User Registrations</p>
+              <h2>
+                 <b> Top </b><p><h2><b>Stocks</b></h2></p>
+              </h2>
             </div>
             <div class="icon">
-              <i class="ion ion-person-add"></i>
+              <i class="ion ion-arrow-graph-up-right"></i>
             </div>
             <a href="#" class="small-box-footer" data-toggle="modal" data-target="#modal-registration">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -411,14 +373,14 @@ desired effect
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">About User registration</h4>
+                <h4 class="modal-title">Trending Stocks</h4>
               </div>
               <div class="modal-body">
-                <p>One fine body&hellip;</p>
+                <p>Click on trending to see all stocks&hellip;</p>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary">Trending</button>
               </div>
             </div>
             <!-- /.modal-content -->
@@ -432,14 +394,14 @@ desired effect
         <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-green">
+          <div class="small-box bg-orange">
             <div class="inner">
-              <h3>65</h3>
-
-              <p>Unique Visitors</p>
+              <h2>
+                 <b> Market</b><p><h2><b>Today</b></h2></p>
+              </h2>
             </div>
             <div class="icon">
-              <i class="ion ion-pie-graph"></i>
+              <i class="ion ion-calendar"></i>
             </div>
             <a href="#" class="small-box-footer" data-toggle="modal" data-target="#modal-visitor">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -454,163 +416,21 @@ desired effect
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">About unique Visitors</h4>
+                <h4 class="modal-title">Latest Order Placed</h4>
               </div>
               <div class="modal-body">
-                <p>One fine body&hellip;</p>
+                <p>Click See All to see all the Latest Orders Placed&hellip;</p>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary">See All</button>
               </div>
             </div>
             <!-- /.modal-content -->
           </div>
           <!-- /.modal-dialog -->
         </div>  
-
-
-
-      <div class="row">
-        <div class="col-md-12">
-          <div class="box">
-            <div class="box-header with-border">
-              <h3 class="box-title">Monthly Recap Report</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <div class="btn-group">
-                  <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-wrench"></i></button>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                  </ul>
-                </div>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <div class="row">
-                <div class="col-md-8">
-                  <p class="text-center">
-                    <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
-                  </p>
-
-                  <div class="chart">
-                    <!-- Sales Chart Canvas -->
-                    <canvas id="salesChart" style="height: 180px;"></canvas>
-                  </div>
-                  <!-- /.chart-responsive -->
-                </div>
-                <!-- /.col -->
-                <div class="col-md-4">
-                  <p class="text-center">
-                    <strong>Goal Completion</strong>
-                  </p>
-
-                  <div class="progress-group">
-                    <span class="progress-text">Add Products to Cart</span>
-                    <span class="progress-number"><b>160</b>/200</span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
-                    </div>
-                  </div>
-                  <!-- /.progress-group -->
-                  <div class="progress-group">
-                    <span class="progress-text">Complete Purchase</span>
-                    <span class="progress-number"><b>310</b>/400</span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar progress-bar-yellow" style="width: 80%"></div>
-                    </div>
-                  </div>
-                  <!-- /.progress-group -->
-                  <div class="progress-group">
-                    <span class="progress-text">Visit Premium Page</span>
-                    <span class="progress-number"><b>480</b>/800</span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar progress-bar-green" style="width: 80%"></div>
-                    </div>
-                  </div>
-                  <!-- /.progress-group -->
-                  <div class="progress-group">
-                    <span class="progress-text">Send Inquiries</span>
-                    <span class="progress-number"><b>250</b>/500</span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar progress-bar-yellow" style="width: 80%"></div>
-                    </div>
-                  </div>
-                  <!-- /.progress-group -->
-                </div>
-                <!-- /.col -->
-              </div>
-              <!-- /.row -->
-            </div>
-            <!-- ./box-body -->
-            <div class="box-footer">
-              <div class="row">
-                <div class="col-sm-3 col-xs-6">
-                  <div class="description-block border-right">
-                    <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 17%</span>
-                    <h5 class="description-header">$35,210.43</h5>
-                    <span class="description-text">TOTAL REVENUE</span>
-                  </div>
-                  <!-- /.description-block -->
-                </div>
-                <!-- /.col -->
-                <div class="col-sm-3 col-xs-6">
-                  <div class="description-block border-right">
-                    <span class="description-percentage text-yellow"><i class="fa fa-caret-left"></i> 0%</span>
-                    <h5 class="description-header">$10,390.90</h5>
-                    <span class="description-text">TOTAL COST</span>
-                  </div>
-                  <!-- /.description-block -->
-                </div>
-                <!-- /.col -->
-                <div class="col-sm-3 col-xs-6">
-                  <div class="description-block border-right">
-                    <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 20%</span>
-                    <h5 class="description-header">$24,813.53</h5>
-                    <span class="description-text">TOTAL PROFIT</span>
-                  </div>
-                  <!-- /.description-block -->
-                </div>
-                <!-- /.col -->
-                <div class="col-sm-3 col-xs-6">
-                  <div class="description-block">
-                    <span class="description-percentage text-yellow"><i class="fa fa-caret-down"></i> 18%</span>
-                    <h5 class="description-header">1200</h5>
-                    <span class="description-text">GOAL COMPLETIONS</span>
-                  </div>
-                  <!-- /.description-block -->
-                </div>
-              </div>
-              <!-- /.row -->
-            </div>
-            <!-- /.box-footer -->
-          </div>
-          <!-- /.box -->
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-
-
-    
-
-
-     
-
-
+        
           <!-- TABLE: LATEST ORDERS -->
           <div class="box box-info">
             <div class="box-header with-border">
@@ -710,118 +530,9 @@ desired effect
   <!-- Main Footer -->
   <footer class="main-footer">
     <!-- To the right -->
-    <div class="pull-right hidden-xs">
-      Anything you want
-    </div>
     <!-- Default to the left -->
     <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
   </footer>
-
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Create the tabs -->
-    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-      <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-    </ul>
-    <!-- Tab panes -->
-    <div class="tab-content">
-      <!-- Home tab content -->
-      <div class="tab-pane active" id="control-sidebar-home-tab">
-        <h3 class="control-sidebar-heading">Recent Activity</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:;">
-              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                <p>Will be 23 on April 24th</p>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-
-        <h3 class="control-sidebar-heading">Tasks Progress</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:;">
-              <h4 class="control-sidebar-subheading">
-                Custom Template Design
-                <span class="pull-right-container">
-                    <span class="label label-danger pull-right">70%</span>
-                  </span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-
-      </div>
-      <!-- /.tab-pane -->
-      <!-- Stats tab content -->
-      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-      <!-- /.tab-pane -->
-      <!-- Settings tab content -->
-      <div class="tab-pane" id="control-sidebar-settings-tab">
-        <form method="post">
-          <h3 class="control-sidebar-heading">General Settings</h3>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Report panel usage
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Some information about this general settings option
-            </p>
-          </div>
-          <!-- /.form-group -->
-        </form>
-      </div>
-      <!-- /.tab-pane -->
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
-  immediately after the control sidebar -->
-  <div class="control-sidebar-bg"></div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- ./wrapper -->
 
 <!-- REQUIRED JS SCRIPTS -->
@@ -848,8 +559,5 @@ desired effect
 <script src="dist/js/demo.js"></script>
 
 
-<!-- Optionally, you can add Slimscroll and FastClick plugins.
-     Both of these plugins are recommended to enhance the
-     user experience. -->
 </body>
 </html>

@@ -20,7 +20,7 @@ import com.dao.impl.RegistrationTableDaoImpl;;
 @WebServlet("/registerme")
 public class Registeruser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	static int UserId=0;
+	//static int UserId=0;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -45,13 +45,13 @@ public class Registeruser extends HttpServlet {
 		
 		if(RetypePassword.equals(Password))
 		{
-			UserId++;
-			int UserID=UserId;
+			//UserId++;
+			//int UserID=UserId;
 			PrintWriter writer=response.getWriter();
 			writer.println("<html>");
 			writer.println("<body>");
-			writer.print(UserID);
-		RegistrationTable register=new RegistrationTable(UserID,FullName,EmailId,Password);
+			//writer.print(UserID);
+		RegistrationTable register=new RegistrationTable(FullName,EmailId,Password);
 		writer.println("Constructor Called");
 		RegistrationTableDao dao= new RegistrationTableDaoImpl();
 		int users=dao.addUser(register);
@@ -61,10 +61,12 @@ public class Registeruser extends HttpServlet {
 		//writer.println("<body>");
 		writer.println(FullName);
 		writer.println(EmailId);
-		writer.println(UserID);
+		//writer.println(UserID);
 			if(users>0)
 				{
 					writer.println("User Added Successfully");
+					writer.println("Try to LogIn");
+					response.sendRedirect("login.jsp");
 				}
 			else
 				{

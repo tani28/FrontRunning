@@ -13,16 +13,16 @@ public class RegistrationTableDaoImpl implements RegistrationTableDao {
 	@Override
 	public int addUser(RegistrationTable register) {
 		int usersAdded=0;
-		String ADDUSER="Insert into RegistrationTable values(?,?,?,?)";
+		String ADDUSER="Insert into RegistrationTable values(?,?,?)";
 		
 		Connection con=MyConnection.openConnection();
 		
 		try {
 			PreparedStatement ps=con.prepareStatement(ADDUSER);
-			ps.setInt(1, register.getUserId());
-			ps.setString(2,register.getFullName());
-			ps.setString(3,register.getEmailId());
-			ps.setString(4,register.getPassword());
+			//ps.setInt(1, register.getUserId());
+			ps.setString(1,register.getFullName());
+			ps.setString(2,register.getEmailId());
+			ps.setString(3,register.getPassword());
 	
 			
 			usersAdded=ps.executeUpdate();

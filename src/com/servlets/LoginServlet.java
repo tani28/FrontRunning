@@ -35,17 +35,20 @@ public class LoginServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		String email =request.getParameter("EmailId");
 		String pass =request.getParameter("Password");
+		//String uname="Empty";
 		System.out.println(email+"\t"+pass);
 		response.setContentType("text/html");
 		PrintWriter writer = response.getWriter();
 		LoginDao dao = new LoginDaoImpl();
 		//System.out.println("5");
 		if(dao.checkLogin(email, pass)){
-			//request.setAttribute("uname", email);
+			request.setAttribute("uname", email);
 			//writer.println("Welcome");
-			response.sendRedirect("success.jsp");
-			//RequestDispatcher dispatcher = request.getRequestDispatcher("success.jsp");
-		//	dispatcher.forward(request,response);
+			//response.sendRedirect("success.jsp");
+			//getServletContext().setAttribute("uname", email);
+			System.out.println(email);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("success.jsp");
+		dispatcher.forward(request,response);
 		}
 		else {
 			writer.println("Invalid Credentials Please LogIn Again");
