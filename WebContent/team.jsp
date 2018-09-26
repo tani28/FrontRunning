@@ -20,10 +20,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-  
+  <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+        page. However, you can choose any other skin. Make sure you
+        apply the skin class to the body tag so the changes take effect. -->
   <link rel="stylesheet" href="dist/css/skins/skin-purple.css">
 
-  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 
   <!-- Google Font -->
   <link rel="stylesheet"
@@ -58,12 +65,9 @@ desired effect
     <!-- Logo -->
     <a href="index.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini">
-              <i class="ion ion-eye"></i>
-            <b>Incognito</b></span>
-      
+      <span class="logo-mini"><b>Incognito</b></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Incognito</b></span>
+      <span class="logo-lg"><b>Incognito</span>
     </a>
 
     <!-- Header Navbar -->
@@ -143,9 +147,7 @@ desired effect
               <img src="dist/img/userlogo.jpg" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
             <span class="hidden-xs"><%String email = (String)request.getAttribute("uname");
-            out.println("Welcome");
-            out.println(email);%>
-            </span>
+            out.println("Welcome "+email);%></span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
@@ -154,8 +156,7 @@ desired effect
 
                 <p>
                   <%String email1 = (String)request.getAttribute("uname");
-            out.println("Welcome");
-            out.println(email1);%>
+            out.println("Welcome \n "+email1);%>
                   <small>Member since Sept. 2018</small>
                 </p>
               </li>
@@ -174,7 +175,7 @@ desired effect
                   <a href="MyTrades.jsp" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="login.jsp" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -200,8 +201,7 @@ desired effect
         </div>
         <div class="pull-left info">
           <p><%String email2 = (String)request.getAttribute("uname");
-            out.println("Welcome");
-            out.println(email2);%></p>
+            out.println("Welcome "+email2);%></p>
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
@@ -224,17 +224,15 @@ desired effect
         <li class="header">Trending</li>
         <!-- Optionally, you can add icons to the links -->
         <li class="active"><a href="https://economictimes.indiatimes.com/topic/banking-sector/news"><i class="fa fa-link"></i> <span>News Today</span></a></li>
+        <li><a href="ShowOrderBookEdit"><i class="fa fa-link"></i> <span>Tester</span></a></li>
         <li><a href="https://www.news18.com/news/business/the-top-banking-frauds-of-all-time-356164.html"><i class="fa fa-link"></i> <span>Popular Banking Frauds</span></a></li>
         <li class="treeview">
           <a href="https://en.wikipedia.org/wiki/Bank_fraud"><i class="fa fa-link"></i> <span>Know More</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
-              </a>
-          <ul class="treeview-menu">
-            <li><a href="https://www.investopedia.com/terms/f/frontrunning.asp">About Front Running</a></li>
-            <li><a href="MyTeam.jsp">About Team</a></li>
-          </ul>
+          </a>
+        </li>
         <li><a href="#"><i class="fa fa-link"></i> <span>Sign Out</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
@@ -247,7 +245,7 @@ desired effect
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Welcome
+        Welcome Employee!!
         <small></small>
       </h1>
     </section>
@@ -273,11 +271,11 @@ desired effect
             <div class="inner">
               <h2>
 
-             <b> My </b><p><h2><b>Trades</b></h2></p>
+             <b> Show </b><p><h2><b>Orderbook</b></h2></p>
             </h2>
             </div>
             <div class="icon">
-              <i class="ion ion-bag"></i>
+              <i class="ion ion-clipboard"></i>
             </div>
             <a href="#" class="small-box-footer" data-toggle="modal" data-target="#modal-default">
              More info <i class="fa fa-arrow-circle-right"></i> </a>
@@ -291,15 +289,14 @@ desired effect
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">My Trades</h4>
+                <h4 class="modal-title">Show OrderBook</h4>
               </div>
               <div class="modal-body">
-                <p>Click Show All to see your past transactions&hellip;</p>
+                <p>Click Show All to see the OrderBook&hellip;</p>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                <a href="mytrades" class="btn btn-primary">Show All</a>
-                
+                <button type="button" class="btn btn-primary">Show All</button>
               </div>
             </div>
             <!-- /.modal-content -->
@@ -317,13 +314,13 @@ desired effect
           <div class="small-box bg-aqua">
             <div class="inner">
               <h2>
-                 <b> Place </b><p><h2><b>Trade</b></h2></p>
+                 <b>Check</b><p><h2><b>Front Running</b></h2></p>
               </h2>
 
               
             </div>
             <div class="icon">
-              <i class="ion ion-social-usd"></i>
+              <i class="ion ion-eye"></i>
             </div>
             <a href="#" class="small-box-footer" data-toggle="modal" data-target="#modal-bouncerate">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -337,46 +334,14 @@ desired effect
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Place new Trade</h4>
+                <h4 class="modal-title">Check Front Running</h4>
               </div>
               <div class="modal-body">
-               <!--   <p>Click Trade Now to see the current stocks and trades&hellip;</p>-->
-               <div class="form-group">
-                <label>Share Name</label>
-                <select class="form-control select2" style="width: 100%;">
-                  <option selected="selected">Facebook</option>
-                  <option>Apple</option>
-                  <option>Walmart</option>
-              
-                </select>
-              </div>
-
-
-                 <div class="form-group">
-                <label>Security Type</label>
-                <select class="form-control select2" style="width: 100%;">
-                  <option selected="selected">Equity</option>
-                  <option>Futures</option>
-                  <option>Call Option</option>
-                  <option>Put Option</option>
-
-              </select>
-              </div>
-
-
-                <div class="form-group">
-                <label>Action</label>
-                <select class="form-control select2" style="width: 100%;">
-                  <option selected="selected">Buy</option>
-                  <option>Sell</option>
-              </select>
-              </div>
-              
-              
+                <p>Click on Check to see the possible Front Running Scenarios&hellip;</p>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Place order</button>
+                <button type="button" class="btn btn-primary">Check</button>
               </div>
             </div>
             <!-- /.modal-content -->
@@ -415,12 +380,8 @@ desired effect
                 <p>Click on trending to see all stocks&hellip;</p>
               </div>
               <div class="modal-footer">
-               <div class="social-auth-links text-center">
-      			<a href="http://thestockmarketwatch.com/markets/topstocks/" class="btn btn-primary pull-right">Trending</a>
-    			<button type="button" class="btn btn-default pull-left"data-dismiss="modal">Close</button>
-    			
-    			</div>
-                
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Trending</button>
               </div>
             </div>
             <!-- /.modal-content -->
