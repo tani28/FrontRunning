@@ -296,7 +296,7 @@ desired effect
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Show All</button>
+                <a href="ShowOrderBook" class="btn btn-primary">Show All</a>
               </div>
             </div>
             <!-- /.modal-content -->
